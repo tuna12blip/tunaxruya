@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rüya'ya Özel ✨</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffdeee, #ffafbd);
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            overflow: hidden;
+            color: #ad1457;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 105, 180, 0.2);
+            text-align: center;
+            max-width: 450px;
+            border: 3px solid #f8bbd0;
+            position: relative;
+            z-index: 5;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+            color: #d81b60;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #ec407a;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #880e4f;
+        }
+
+        .floating-emoji {
+            position: absolute;
+            bottom: -50px;
+            font-size: 28px;
+            user-select: none;
+            z-index: 1;
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+
+        .heart-main {
+            font-size: 60px;
+            margin-bottom: 10px;
+            display: inline-block;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        .btn {
+            background: #f06292;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 25px;
+            box-shadow: 0 5px 15px rgba(240, 98, 146, 0.4);
+        }
+
+        .btn:hover {
+            background: #d81b60;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(216, 27, 96, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="heart-main">💖</div>
+        <h1>Canım Rüya ✨</h1>
+        <div class="subtitle">Sen benim en güzel gerçeğimsin...</div>
+        <p>İnsanlar uyuyunca rüya görür ama ben seninle uyandığım her günü bir <b>Rüya</b> gibi yaşıyorum. İyi ki hayatımdasın! 🌹</p>
+        <button class="btn" onclick="celebrate()">Sana Bir Mesajım Var 💌</button>
+    </div>
+
+    <script>
+        function createEmoji() {
+            const emojis = ['💖', '🌸', '✨', '☁️', '🧚‍♀️', '🎀', '💕'];
+            const emoji = document.createElement('div');
+            emoji.classList.add('floating-emoji');
+            emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = Math.random() * 100 + "vw";
+            emoji.style.animationDuration = (Math.random() * 3 + 4) + "s";
+            document.body.appendChild(emoji);
+
+            setTimeout(() => {
+                emoji.remove();
+            }, 7000);
+        }
+
+        setInterval(createEmoji, 400);
+
+        function celebrate() {
+            alert("Rüya, seni her şeyden çok seviyorum! ❤️ Seninle her an bir masal gibi...");
+        }
+    </script>
+</body>
+</html>
